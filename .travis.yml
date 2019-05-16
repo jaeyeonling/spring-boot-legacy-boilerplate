@@ -1,0 +1,6 @@
+language: java
+
+script: "gradle test"
+
+jdk:
+  - openjdk12
