@@ -16,6 +16,7 @@ import javax.persistence.*;
 @DynamicInsert
 @DynamicUpdate
 public class Account extends DateAuditPrimaryEntity {
+
     @Column(nullable = false)
     private String username;
 

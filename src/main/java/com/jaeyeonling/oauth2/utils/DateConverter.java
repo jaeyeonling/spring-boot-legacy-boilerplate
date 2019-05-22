@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Component
 public class DateConverter {
+
     public Optional<Date> localDateTimeToDate(@Nullable final LocalDateTime localDateTime) {
         return localDateTimeToDate(localDateTime, ZoneId.systemDefault());
     }

@@ -17,6 +17,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 
 @Service
 public class AccountService {
+
     private final AuthenticationRepository authenticationRepository;
 
     //

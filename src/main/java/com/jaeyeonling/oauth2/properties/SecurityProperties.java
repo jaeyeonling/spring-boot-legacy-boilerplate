@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "jaeyeonling.oauth2.security")
 public class SecurityProperties {
+
     private String loginEndPoint;
     private int passwordEncodeStrength;
 }

@@ -21,7 +21,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     //
 
     @Autowired
-    private LoginSuccessHandler(
+    public LoginSuccessHandler(
             final JwtProperties jwtProperties,
             final JwtManager jwtManager
     ) {

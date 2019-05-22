@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Component
 public class LoginFailHandler implements AuthenticationFailureHandler {
+
     @Override
     public void onAuthenticationFailure(
             final HttpServletRequest request,

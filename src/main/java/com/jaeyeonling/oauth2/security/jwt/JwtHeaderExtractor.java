@@ -7,6 +7,7 @@ import org.springframework.util.StringUtils;
 
 @Component
 class JwtHeaderExtractor {
+
     private final String prefix = "Bearer ";
 
     //

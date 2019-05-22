@@ -1,6 +1,7 @@
 package com.jaeyeonling.oauth2.type;
 
 public enum UserRole {
+
     ADMIN,
     USER,
 

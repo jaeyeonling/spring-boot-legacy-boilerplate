@@ -7,6 +7,7 @@ import lombok.experimental.UtilityClass;
  */
 @UtilityClass
 public class BeanUtils {
+
     public <T> T getBean(final Class<T> classType) {
         return ApplicationContextProvider.getContext().getBean(classType);
     }

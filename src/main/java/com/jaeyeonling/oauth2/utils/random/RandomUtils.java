@@ -10,6 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @Component
 public class RandomUtils {
+
     private final TimeBasedGenerator timeBasedGenerator =
             Generators.timeBasedGenerator(EthernetAddress.constructMulticastAddress(ThreadLocalRandom.current()));
     private final AlphaNumeric alphaNumeric;

@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "jaeyeonling.oauth2.application")
 public class ApplicationProperties {
+
     private String name;
     private int version;
 }

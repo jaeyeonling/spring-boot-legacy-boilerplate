@@ -16,6 +16,7 @@ import java.io.IOException;
 
 @Component
 public class JwtFilter extends AbstractAuthenticationProcessingFilter {
+
     private final JwtHeaderExtractor jwtHeaderExtractor;
     private final JwtSuccessHandler jwtSuccessHandler;
     private final JwtFailHandler jwtFailHandler;

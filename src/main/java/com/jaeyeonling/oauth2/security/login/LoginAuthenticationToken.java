@@ -2,7 +2,8 @@ package com.jaeyeonling.oauth2.security.login;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
-public class LoginAuthenticationToken extends UsernamePasswordAuthenticationToken {
+class LoginAuthenticationToken extends UsernamePasswordAuthenticationToken {
+
     private LoginAuthenticationToken(
             final Object principal,
             final Object credentials
@@ -14,7 +15,7 @@ public class LoginAuthenticationToken extends UsernamePasswordAuthenticationToke
     //
     //
 
-    public static LoginAuthenticationToken of(final LoginRequest loginRequest) {
+    static LoginAuthenticationToken of(final LoginRequest loginRequest) {
         return new LoginAuthenticationToken(
                 loginRequest.getUserId(),
                 loginRequest.getPassword()
@@ -25,11 +26,11 @@ public class LoginAuthenticationToken extends UsernamePasswordAuthenticationToke
     //
     //
 
-    public String getUserId() {
+    String getUserId() {
         return (String) getPrincipal();
     }
 
-    public String getPassword() {
+    String getPassword() {
         return (String) getCredentials();
     }
 }

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Component
 public class JwtSuccessHandler implements AuthenticationSuccessHandler {
+
     @Override
     public void onAuthenticationSuccess(
             final HttpServletRequest request,

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 class ApplicationContextProvider implements ApplicationContextAware {
+    
     @Getter(AccessLevel.PACKAGE)
     private static ApplicationContext context;
 

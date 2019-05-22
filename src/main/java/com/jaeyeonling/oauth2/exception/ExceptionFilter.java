@@ -16,6 +16,7 @@ import java.io.IOException;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @Component
 public class ExceptionFilter extends OncePerRequestFilter {
+
     private final ObjectMapper objectMapper;
 
     //

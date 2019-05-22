@@ -14,7 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class GlobalController {
+
     private final AccountService accountService;
+
+    //
+    //
+    //
 
     @Autowired
     public GlobalController(final AccountService accountService) {

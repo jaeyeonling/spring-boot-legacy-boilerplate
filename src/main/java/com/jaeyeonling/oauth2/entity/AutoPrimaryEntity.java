@@ -9,6 +9,7 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 abstract class AutoPrimaryEntity extends PrimaryEntity {
+
     @Getter
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

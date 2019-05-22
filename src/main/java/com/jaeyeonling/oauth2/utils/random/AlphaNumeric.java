@@ -8,6 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @Component
 class AlphaNumeric {
+
     private final Random random = ThreadLocalRandom.current();
     private final String value;
 

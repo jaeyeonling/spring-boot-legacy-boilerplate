@@ -10,6 +10,7 @@ import java.util.Arrays;
 
 @Component
 public class AuthenticationProviderManager extends ProviderManager {
+
     @Autowired
     public AuthenticationProviderManager(
             final LoginAuthenticationProvider loginAuthenticationProvider,

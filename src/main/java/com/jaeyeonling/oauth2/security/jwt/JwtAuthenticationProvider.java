@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtAuthenticationProvider implements AuthenticationProvider {
+
     private final JwtManager jwtManager;
 
     //

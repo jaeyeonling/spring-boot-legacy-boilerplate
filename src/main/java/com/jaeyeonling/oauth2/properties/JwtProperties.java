@@ -13,6 +13,7 @@ import java.util.List;
 @Configuration
 @ConfigurationProperties(prefix = "jaeyeonling.oauth2.jwt")
 public class JwtProperties {
+
     private String secretKey;
     private Duration refreshTerm;
     private Duration expiredTerm;

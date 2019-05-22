@@ -7,6 +7,7 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 abstract class ManualPrimaryEntity extends PrimaryEntity {
+
     @Getter
     @Id
     private long id;

@@ -10,6 +10,7 @@ import java.util.Date;
 
 @Converter
 public class LocalDateTimeConverter implements AttributeConverter<LocalDateTime, Date> {
+
     @Override
     public Date convertToDatabaseColumn(final LocalDateTime attribute) {
         return BeanUtils.getBean(DateConverter.class).localDateTimeToDate(attribute).orElseGet(Date::new);

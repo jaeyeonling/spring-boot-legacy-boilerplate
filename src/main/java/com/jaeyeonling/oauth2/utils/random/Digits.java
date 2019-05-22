@@ -9,6 +9,7 @@ import java.util.stream.IntStream;
 
 @Component
 class Digits {
+
     @Getter(AccessLevel.PACKAGE)
     private final String stringDigits = IntStream.rangeClosed(Digit.MIN_DIGIT, Digit.MAX_DIGIT)
             .mapToObj(Digit::new)

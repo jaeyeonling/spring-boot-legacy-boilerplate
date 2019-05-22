@@ -20,6 +20,7 @@ import java.util.Date;
 @Slf4j
 @Component
 public class JwtManager {
+
     private final RandomUtils randomUtils;
     private final AccessTokenRepository accessTokenRepository;
     private final ApplicationProperties applicationProperties;

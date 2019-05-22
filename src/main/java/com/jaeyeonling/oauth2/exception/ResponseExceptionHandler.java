@@ -11,7 +11,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @Slf4j
 @ControllerAdvice
-class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
+public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
+
     @ExceptionHandler(PlatformException.class)
     public ResponseEntity<?> platformException(final PlatformException e) {
         return e.toResponse();

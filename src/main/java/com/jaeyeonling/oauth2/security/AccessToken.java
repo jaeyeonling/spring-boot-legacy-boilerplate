@@ -9,6 +9,7 @@ import java.util.Objects;
 
 @RedisHash
 public class AccessToken {
+
     @Setter
     @Id
     private String id;

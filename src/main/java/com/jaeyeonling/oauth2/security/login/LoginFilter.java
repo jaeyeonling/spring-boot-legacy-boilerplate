@@ -15,6 +15,7 @@ import java.io.IOException;
 
 @Component
 public class LoginFilter extends AbstractAuthenticationProcessingFilter {
+
     private final ObjectMapper objectMapper;
     private final LoginSuccessHandler loginSuccessHandler;
     private final LoginFailHandler loginFailHandler;

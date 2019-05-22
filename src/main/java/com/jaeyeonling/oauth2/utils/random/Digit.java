@@ -1,6 +1,7 @@
 package com.jaeyeonling.oauth2.utils.random;
 
 class Digit {
+
     static final int MIN_DIGIT = 0;
     static final int MAX_DIGIT = 9;
 

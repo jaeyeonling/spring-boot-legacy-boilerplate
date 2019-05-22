@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PasswordEncoder extends BCryptPasswordEncoder {
+
     @Autowired
     public PasswordEncoder(final SecurityProperties securityProperties) {
         super(securityProperties.getPasswordEncodeStrength());

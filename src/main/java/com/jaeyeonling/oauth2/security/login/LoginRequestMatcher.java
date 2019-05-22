@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Component
 public class LoginRequestMatcher implements RequestMatcher {
+
     private final AntPathRequestMatcher antPathRequestMatcher;
 
     //
@@ -17,7 +18,7 @@ public class LoginRequestMatcher implements RequestMatcher {
     //
 
     @Autowired
-    private LoginRequestMatcher(final SecurityProperties securityProperties) {
+    public LoginRequestMatcher(final SecurityProperties securityProperties) {
         antPathRequestMatcher = new AntPathRequestMatcher(securityProperties.getLoginEndPoint());
     }
 

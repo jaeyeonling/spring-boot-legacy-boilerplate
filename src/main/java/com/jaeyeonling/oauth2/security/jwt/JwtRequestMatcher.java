@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 @Component
 public class JwtRequestMatcher implements RequestMatcher {
+
     private final OrRequestMatcher skipRequestMatcher;
     private final OrRequestMatcher checkRequestMatcher;
 

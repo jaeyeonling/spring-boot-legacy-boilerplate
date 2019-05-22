@@ -5,6 +5,7 @@ import com.jaeyeonling.oauth2.security.PasswordEncoder;
 import com.jaeyeonling.oauth2.utils.BeanUtils;
 
 public enum AuthProvider {
+
     SERVER {
         @Override
         public boolean verify(

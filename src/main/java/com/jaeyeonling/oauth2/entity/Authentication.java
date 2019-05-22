@@ -15,13 +15,17 @@ import javax.persistence.*;
 
 @Table(
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = { "authProvider", "userId" })
+                @UniqueConstraint(columnNames = {
+                        "authProvider",
+                        "userId",
+                })
         }
 )
 @Entity
 @DynamicInsert
 @DynamicUpdate
 public class Authentication extends AutoPrimaryEntity {
+
     @Enumerated(EnumType.ORDINAL)
     @Column(nullable = false)
     private AuthProvider authProvider;

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 
 @Builder
 public class PlatformException extends RuntimeException {
+
     @Builder.Default
     private PlatformStatus status = PlatformStatus.INTERNAL_SERVER_ERROR;
     private Header header;

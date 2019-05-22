@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class JwtAuthenticationToken implements Authentication {
+
     @Getter
     private boolean authenticated = false;
 
@@ -44,11 +45,8 @@ public class JwtAuthenticationToken implements Authentication {
     //
     //
 
+    @Override
     public void setAuthenticated(final boolean ignore) { }
-
-    public boolean isExpired() {
-        return getDecodedJWT().getExpiresAt().getTime() <= System.currentTimeMillis();
-    }
 
     public String getJwtId() {
         return getDecodedJWT().getId();
@@ -62,6 +60,10 @@ public class JwtAuthenticationToken implements Authentication {
     //
     //
 
+    boolean isExpired() {
+        return getDecodedJWT().getExpiresAt().getTime() <= System.currentTimeMillis();
+    }
+
     String getToken() {
         return (String) credentials;
     }
@@ -71,6 +73,10 @@ public class JwtAuthenticationToken implements Authentication {
 
         bind();
     }
+
+    //
+    //
+    //
 
     private DecodedJWT getDecodedJWT() {
         return (DecodedJWT) details;

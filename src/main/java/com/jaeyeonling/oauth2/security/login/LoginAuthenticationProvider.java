@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class LoginAuthenticationProvider implements AuthenticationProvider {
+
     private final AuthenticationRepository authenticationRepository;
 
     //

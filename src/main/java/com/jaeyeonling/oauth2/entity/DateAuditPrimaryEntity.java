@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 abstract class DateAuditPrimaryEntity extends CreateAuditPrimaryEntity {
+
     @Getter
     @Column(nullable = false, updatable = false)
     @Convert(converter = LocalDateTimeConverter.class)

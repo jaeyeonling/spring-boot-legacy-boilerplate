@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class SecurityUser extends User {
+
     private final Authentication authentication;
 
     //

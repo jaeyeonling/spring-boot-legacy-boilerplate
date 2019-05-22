@@ -36,6 +36,10 @@ public enum PlatformStatus {
     @Getter
     private final HttpStatus httpStatus;
 
+    //
+    //
+    //
+
     public ResponseEntity<Error> toResponse() {
         return toResponse(null);
     }
