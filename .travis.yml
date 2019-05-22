@@ -1,6 +1,5 @@
 language: java
 
-script: "gradle test"
-
 jdk:
+  - openjdk11
   - openjdk12

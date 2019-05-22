@@ -92,11 +92,6 @@ public class JwtManager {
         accessToken.setToken(encodedJWT);
         accessToken.setTimeToLive(getExpiredMillis() + getRefreshMillis());
 
-        // 1시
-        // 30분
-        // Redis -> 1시 + 30분 + 30분
-        // 1시 40분 -> 레디스에 있음 -> 만료
-
         accessTokenRepository.save(accessToken);
     }
 
