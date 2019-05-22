@@ -7,7 +7,7 @@
     </appender>
 
     <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>boilerplate.log</file>
+        <file>oauth2.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>colini-attach-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
@@ -37,7 +37,7 @@
         <logger name="org.hibernate" level="DEBUG" />
         <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" />
         <logger name="com.zaxxer.hikari" level="DEBUG" />
-        <logger name="com.jaeyeonling.boilerplate" level="TRACE" />
+        <logger name="com.jaeyeonling.oauth2" level="TRACE" />
 
         <root level="INFO">
             <appender-ref ref="ASYNC_STDOUT" />

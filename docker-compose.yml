@@ -3,12 +3,12 @@ version: '3'
 services:
   mysql:
     image: mysql:8
-    container_name: spring-boot-boilerplate-mysql-8
+    container_name: spring-boot-oauth2-mysql-8
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=user
       - MYSQL_PASSWORD=password
-      - MYSQL_DATABASE=boilerplate
+      - MYSQL_DATABASE=oauth2
       - MYSQL_ROOT_HOST=127.0.0.1
     ports:
       - '3306:3306'
@@ -20,7 +20,7 @@ services:
 
   redis:
     image: redis:5
-    container_name: spring-boot-boilerplate-redis-5
+    container_name: spring-boot-oauth2-redis-5
     ports:
       - '6379:6379'
     volumes:

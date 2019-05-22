@@ -5,7 +5,7 @@ plugins {
     id 'idea'
 }
 
-group = 'com.jaeyeonling.boilerplate'
+group = 'com.jaeyeonling.oauth2'
 version = '0.0.1'
 
 ext {
@@ -18,6 +18,8 @@ ext {
             'hibernate'             : '5.+',
             'mysql'                 : '8.+',
             'uuid'                  : '3.2.+',
+            'java-jwt'              : '3.+',
+            'embedded-redis'        : '0.6',
     ]
 }
 
@@ -35,10 +37,13 @@ dependencies {
     testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: versions['spring-boot']
 
     testImplementation group: 'com.h2database', name: 'h2', version: versions['h2']
+    testImplementation group: 'com.github.kstyrc', name: 'embedded-redis', version: versions['embedded-redis']
 
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: versions['spring-boot']
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: versions['spring-boot']
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: versions['spring-boot']
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: versions['spring-boot']
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: versions['spring-boot']
 
     implementation group: 'org.hibernate', name: 'hibernate-core', version: versions['hibernate']
     implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: versions['hibernate']
@@ -47,4 +52,6 @@ dependencies {
     implementation group: 'mysql', name: 'mysql-connector-java', version: versions['mysql']
 
     implementation group: 'com.fasterxml.uuid', name: 'java-uuid-generator', version: versions['uuid']
+
+    implementation group: 'com.auth0', name: 'java-jwt', version: versions['java-jwt']
 }
