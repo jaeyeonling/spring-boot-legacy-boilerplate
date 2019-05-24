@@ -1,4 +1,4 @@
-# Spring Boot OAuth2
+# SpringBoot Boilerplate
 
 
 ## 환경
