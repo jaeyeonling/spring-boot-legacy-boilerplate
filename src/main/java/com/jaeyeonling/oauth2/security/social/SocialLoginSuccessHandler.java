@@ -1,4 +1,4 @@
-package com.jaeyeonling.oauth2.security.login;
+package com.jaeyeonling.oauth2.security.social;
 
 import com.jaeyeonling.oauth2.properties.JwtProperties;
 import com.jaeyeonling.oauth2.security.JwtManager;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Component
-public class LoginSuccessHandler implements AuthenticationSuccessHandler {
+public class SocialLoginSuccessHandler implements AuthenticationSuccessHandler {
 
     private final JwtProperties jwtProperties;
     private final JwtManager jwtManager;
@@ -22,7 +22,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     //
 
     @Autowired
-    public LoginSuccessHandler(
+    public SocialLoginSuccessHandler(
             final JwtProperties jwtProperties,
             final JwtManager jwtManager
     ) {
@@ -40,7 +40,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
             final HttpServletResponse response,
             final Authentication authentication
     ) {
-        final var authenticationToken = (LoginAuthenticationToken) authentication;
+        final var authenticationToken = (SocialLoginAuthenticationToken) authentication;
         final var securityUser = (SecurityUser) authenticationToken.getDetails();
 
         final var accessToken = jwtManager.generate(securityUser);

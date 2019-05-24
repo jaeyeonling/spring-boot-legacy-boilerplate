@@ -5,15 +5,10 @@ import com.jaeyeonling.oauth2.entity.Authentication;
 import com.jaeyeonling.oauth2.exception.PlatformException;
 import com.jaeyeonling.oauth2.exception.PlatformStatus;
 import com.jaeyeonling.oauth2.model.SignUpRequest;
-import com.jaeyeonling.oauth2.repository.AccountRepository;
 import com.jaeyeonling.oauth2.repository.AuthenticationRepository;
-import com.jaeyeonling.oauth2.type.AuthProvider;
-import com.jaeyeonling.oauth2.type.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
-
-import java.sql.SQLIntegrityConstraintViolationException;
 
 @Service
 public class AccountService {

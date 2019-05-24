@@ -2,12 +2,11 @@ package com.jaeyeonling.oauth2.entity;
 
 import com.jaeyeonling.oauth2.model.SignUpRequest;
 import com.jaeyeonling.oauth2.security.PasswordEncoder;
+import com.jaeyeonling.oauth2.security.social.SocialUserInfo;
 import com.jaeyeonling.oauth2.type.AuthProvider;
 import com.jaeyeonling.oauth2.type.UserRole;
 import com.jaeyeonling.oauth2.utils.BeanUtils;
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -38,7 +37,7 @@ public class Authentication extends AutoPrimaryEntity {
     @Column(nullable = false)
     private String password;
 
-    @Getter @Setter(value = AccessLevel.PRIVATE)
+    @Getter
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "owner", referencedColumnName = "id")
     private Account account;
@@ -50,13 +49,29 @@ public class Authentication extends AutoPrimaryEntity {
     public static Authentication of(final SignUpRequest signUpRequest) {
         final var account = new Account();
         account.setUsername(signUpRequest.getUsername());
-        account.setRole(signUpRequest.getUserRole());
+        account.setEmail(signUpRequest.getEmail());
+        account.setRole(UserRole.USER);
 
         final var authentication = new Authentication();
         authentication.account = account;
-        authentication.authProvider = signUpRequest.getAuthProvider();
+        authentication.authProvider = AuthProvider.SERVER;
         authentication.userId = signUpRequest.getUserId();
         authentication.setPassword(signUpRequest.getPassword());
+
+        return authentication;
+    }
+
+    public static Authentication of(final SocialUserInfo socialUserInfo) {
+        final var account = new Account();
+        account.setUsername(socialUserInfo.getNickname());
+        account.setEmail(socialUserInfo.getEmail());
+        account.setRole(UserRole.USER);
+
+        final var authentication = new Authentication();
+        authentication.account = account;
+        authentication.authProvider = socialUserInfo.getAuthProvider();
+        authentication.userId = socialUserInfo.getUserId();
+        authentication.setPassword(socialUserInfo.getUserId()); // Note: password not null
 
         return authentication;
     }

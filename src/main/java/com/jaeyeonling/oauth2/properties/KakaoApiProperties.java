@@ -8,10 +8,8 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 @Getter
 @Configuration
-@ConfigurationProperties(prefix = "jaeyeonling.oauth2.security")
-public class SecurityProperties {
+@ConfigurationProperties(prefix = "jaeyeonling.oauth2.kakao")
+public class KakaoApiProperties {
 
-    private String loginEndPoint;
-    private String socialLoginEndPoint;
-    private int passwordEncodeStrength;
+    private String endPoint;
 }

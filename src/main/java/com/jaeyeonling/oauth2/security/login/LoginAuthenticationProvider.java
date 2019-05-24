@@ -5,6 +5,7 @@ import com.jaeyeonling.oauth2.exception.PlatformStatus;
 import com.jaeyeonling.oauth2.repository.AuthenticationRepository;
 import com.jaeyeonling.oauth2.security.PasswordEncoder;
 import com.jaeyeonling.oauth2.security.SecurityUser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -19,7 +20,8 @@ public class LoginAuthenticationProvider implements AuthenticationProvider {
     //
     //
 
-    private LoginAuthenticationProvider(final AuthenticationRepository authenticationRepository) {
+    @Autowired
+    public LoginAuthenticationProvider(final AuthenticationRepository authenticationRepository) {
         this.authenticationRepository = authenticationRepository;
     }
 

@@ -2,6 +2,7 @@ package com.jaeyeonling.oauth2.security;
 
 import com.jaeyeonling.oauth2.security.jwt.JwtAuthenticationProvider;
 import com.jaeyeonling.oauth2.security.login.LoginAuthenticationProvider;
+import com.jaeyeonling.oauth2.security.social.SocialLoginAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.stereotype.Component;
@@ -14,12 +15,14 @@ public class AuthenticationProviderManager extends ProviderManager {
     @Autowired
     public AuthenticationProviderManager(
             final LoginAuthenticationProvider loginAuthenticationProvider,
-            final JwtAuthenticationProvider jwtAuthenticationProvider
+            final JwtAuthenticationProvider jwtAuthenticationProvider,
+            final SocialLoginAuthenticationProvider socialLoginAuthenticationProvider
     ) {
         super(
                 Arrays.asList(
                         loginAuthenticationProvider,
-                        jwtAuthenticationProvider
+                        jwtAuthenticationProvider,
+                        socialLoginAuthenticationProvider
                 )
         );
     }

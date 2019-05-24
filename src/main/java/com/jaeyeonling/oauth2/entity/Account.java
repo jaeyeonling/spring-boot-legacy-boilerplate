@@ -20,6 +20,12 @@ public class Account extends DateAuditPrimaryEntity {
     @Column(nullable = false)
     private String username;
 
+    @Column(nullable = true)
+    private String email;
+
+    @Column(nullable = true)
+    private String profileImage;
+
     @Getter
     @Enumerated(EnumType.ORDINAL)
     @Column(nullable = false)

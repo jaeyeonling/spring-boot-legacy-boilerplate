@@ -19,7 +19,7 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
     //
 
     @Autowired
-    private JwtAuthenticationProvider(final JwtManager jwtManager) {
+    public JwtAuthenticationProvider(final JwtManager jwtManager) {
         this.jwtManager = jwtManager;
     }
 

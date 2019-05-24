@@ -1,6 +1,5 @@
 package com.jaeyeonling.oauth2.model;
 
-import com.jaeyeonling.oauth2.type.AuthProvider;
 import com.jaeyeonling.oauth2.type.UserRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,5 +13,5 @@ public class SignUpRequest {
 
     private String password;
     private String username;
-    private AuthProvider authProvider;
+    private String email;
 }

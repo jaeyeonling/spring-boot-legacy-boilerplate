@@ -9,24 +9,26 @@ spring:
         format_sql: true
         show_sql: true
 
-jaeyeonling:
-  oauth2:
-    application:
-      name: oauth2
-      version: 1
-    security:
-      loginEndPoint: /login
-      passwordEncodeStrength: 6
-    jwt:
-      secretKey: SeCrEtKeY
-      refreshTerm: 30s
-      expiredTerm: 1m
-      jwtIdLength: 128
-      headerName: Authorization
-      skipPaths:
-        - /health
-        - /timestamp
-        - /login
-      checkPaths:
-        - /user
-        - /admin
+jaeyeonling.oauth2:
+  application:
+    name: oauth2
+    version: 1
+  security:
+    loginEndPoint: /login
+    socialLoginEndPoint: /social-login
+    passwordEncodeStrength: 6
+  jwt:
+    secretKey: SeCrEtKeY
+    refreshTerm: 30s
+    expiredTerm: 1m
+    jwtIdLength: 128
+    headerName: Authorization
+    skipPaths:
+      - /health
+      - /timestamp
+      - /login
+    checkPaths:
+      - /user
+      - /admin
+  kakao:
+    endPoint: https://kapi.kakao.com/v2/user/me

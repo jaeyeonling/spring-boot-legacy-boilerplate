@@ -143,12 +143,11 @@ docker-compose -f docker-compose.yml up
 
     * jti: JWT ID
 
-## 외부 인증 연동 (TODO)
-
-
-요즘은 Implicit Grant Flow이 대세
+## 외부 인증 연동 
 
 ![Implicit Grant Flow](assets/implicit_grant_flow.png)
+
+* [x] Kakao
 
 
 ## 참고 내용
