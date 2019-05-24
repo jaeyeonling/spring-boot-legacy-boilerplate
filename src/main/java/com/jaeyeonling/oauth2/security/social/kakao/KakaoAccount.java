@@ -14,7 +14,7 @@ class KakaoAccount {
     private boolean emailAgree;
 
     @JsonProperty("is_email_valid")
-    private boolean isEamilValid;
+    private boolean isEmailValid;
 
     private String email;
 
@@ -23,7 +23,7 @@ class KakaoAccount {
     //
 
     @Nullable String getEmail() {
-        if (isEamilValid && emailAgree) {
+        if (isEmailValid && emailAgree) {
             return email;
         }
 

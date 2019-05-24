@@ -1,6 +1,5 @@
 package com.jaeyeonling.oauth2.security.social.kakao;
 
-import com.jaeyeonling.oauth2.exception.PlatformException;
 import com.jaeyeonling.oauth2.model.Header;
 import com.jaeyeonling.oauth2.properties.KakaoApiProperties;
 import com.jaeyeonling.oauth2.security.social.SocialFetchService;
