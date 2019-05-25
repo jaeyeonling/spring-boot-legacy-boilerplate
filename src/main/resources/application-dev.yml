@@ -1,7 +1,7 @@
 spring:
   output.ansi.enabled: ALWAYS
   data-source:
-    url: jdbc:mysql://127.0.0.1:3306/oauth2?useUnicode=true&characterEncoding=UTF-8&useLocalSessionState=true
+    url: jdbc:mysql://127.0.0.1:3306/boilerplate?useUnicode=true&characterEncoding=UTF-8&useLocalSessionState=true
     username: user
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -16,9 +16,9 @@ spring:
 
 server.port: 8080
 
-jaeyeonling.oauth2:
+jaeyeonling.boilerplate:
   application:
-      name: oauth2
+      name: boilerplate
       version: 1
   security:
     loginEndPoint: /login

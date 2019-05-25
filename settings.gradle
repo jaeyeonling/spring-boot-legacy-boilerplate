@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'spring-boot-oauth2'
+rootProject.name = 'spring-boot-boilerplate'
