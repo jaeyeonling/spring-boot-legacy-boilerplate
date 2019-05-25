@@ -30,10 +30,7 @@ public class KakaoVerifier implements Verifier {
             final Authentication authentication,
             final String token
     ) {
-        final var socialLoginRequest = new SocialLoginRequest(
-                AuthProvider.KAKAO,
-                token
-        );
+        final var socialLoginRequest = SocialLoginRequest.token(token);
 
         final var userId = kakaoFetchService.getSocialUserInfo(socialLoginRequest).getUserId();
 

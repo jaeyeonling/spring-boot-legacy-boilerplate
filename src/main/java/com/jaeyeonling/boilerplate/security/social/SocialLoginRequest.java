@@ -1,15 +1,15 @@
 package com.jaeyeonling.boilerplate.security.social;
 
-import com.jaeyeonling.boilerplate.type.AuthProvider;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Getter
 @NoArgsConstructor // Note: Using ObjectMapper
-@AllArgsConstructor
+@RequiredArgsConstructor(staticName = "token")
 public class SocialLoginRequest {
 
-    private AuthProvider authProvider;
+    @NonNull
     private String token;
 }

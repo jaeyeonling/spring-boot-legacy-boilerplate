@@ -5,22 +5,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 
 class SocialLoginAuthenticationToken extends UsernamePasswordAuthenticationToken {
 
-    private SocialLoginAuthenticationToken(
-            final Object principal,
-            final Object credentials
+    public SocialLoginAuthenticationToken(
+            final Object authProvider,
+            final Object socialLoginRequest
     ) {
-        super(principal, credentials);
-    }
-
-    //
-    //
-    //
-
-    static SocialLoginAuthenticationToken of(final SocialLoginRequest socialLoginRequest) {
-        return new SocialLoginAuthenticationToken(
-                socialLoginRequest.getAuthProvider(),
-                socialLoginRequest
-        );
+        super(authProvider, socialLoginRequest);
     }
 
     //
