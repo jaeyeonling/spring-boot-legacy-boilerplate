@@ -37,22 +37,7 @@ docker-compose -f docker-compose.yml up
 ```
 
 
-## 구현 내용
-
-1. 회원가입
-
-2. 로그인
-    * 토큰 발행
-    
-3. 요청 (토큰으로 인증)
-    * any
-    
-    * admin
-    
-    * user
-    
-    
-## 스프링 시큐
+## 스프링 시큐리티
 
 1. Filter
 

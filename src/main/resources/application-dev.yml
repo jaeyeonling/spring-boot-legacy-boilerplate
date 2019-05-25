@@ -22,7 +22,7 @@ jaeyeonling.boilerplate:
       version: 1
   security:
     loginEndPoint: /login
-    socialLoginEndPoint: /social-login
+    socialLoginEndPoint: /social-login/{authProvider}
     passwordEncodeStrength: 6
   jwt:
     secretKey: SeCrEtKeY
