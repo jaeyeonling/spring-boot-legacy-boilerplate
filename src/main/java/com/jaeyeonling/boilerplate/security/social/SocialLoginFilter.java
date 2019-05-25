@@ -105,11 +105,8 @@ public class SocialLoginFilter extends AbstractAuthenticationProcessingFilter {
     private AuthProvider getAuthProvider(final HttpServletRequest httpServletRequest) {
         final var lastURI = getLastURI(httpServletRequest);
 
-        try {
-            return AuthProvider.valueOf(lastURI.toUpperCase());
-        } catch (final Exception ignore) {
-            throw PlatformException.builder().status(PlatformStatus.BAD_REQUEST).build();
-        }
+        return AuthProvider.of(lastURI)
+                .orElseThrow(() -> PlatformException.builder().status(PlatformStatus.BAD_REQUEST).build());
     }
 
     private String getLastURI(final HttpServletRequest httpServletRequest) {
