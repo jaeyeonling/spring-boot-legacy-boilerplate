@@ -12,7 +12,7 @@ public abstract class SocialVerifier implements Verifier {
     //
     //
 
-    public SocialVerifier(final SocialFetchService socialFetchService) {
+    SocialVerifier(final SocialFetchService socialFetchService) {
         this.socialFetchService = socialFetchService;
     }
 

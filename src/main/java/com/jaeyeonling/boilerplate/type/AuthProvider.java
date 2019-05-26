@@ -11,6 +11,7 @@ public enum AuthProvider {
     SERVER,
     KAKAO,
     GITHUB,
+    NAVER,
 
     // TODO: Google, Github, Facebook, ...
 

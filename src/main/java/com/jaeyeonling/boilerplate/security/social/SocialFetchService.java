@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
 
-public abstract class SocialFetchService {
+public abstract class SocialFetchService<T extends SocialUserInfo> {
 
     private final SecurityProperties securityProperties;
     private final RestTemplate restTemplate;
@@ -34,9 +34,9 @@ public abstract class SocialFetchService {
     //
 
     protected abstract AuthProvider getAuthProvider();
-    protected abstract Class<? extends SocialUserInfo> getSocialUserInfoType();
+    protected abstract Class<T> getSocialUserInfoType();
 
-    public SocialUserInfo getSocialUserInfo(final SocialLoginRequest socialLoginRequest) {
+    public T getSocialUserInfo(final SocialLoginRequest socialLoginRequest) {
         return exchange(socialLoginRequest).getBody();
     }
 
@@ -49,7 +49,7 @@ public abstract class SocialFetchService {
                 .orElseThrow(() -> PlatformException.builder().status(PlatformStatus.BAD_REQUEST).build());
     }
 
-    private ResponseEntity<? extends SocialUserInfo> exchange(final SocialLoginRequest socialLoginRequest) {
+    private ResponseEntity<T> exchange(final SocialLoginRequest socialLoginRequest) {
         final var header = new Header();
         header.setBearerToken(socialLoginRequest.getToken());
 

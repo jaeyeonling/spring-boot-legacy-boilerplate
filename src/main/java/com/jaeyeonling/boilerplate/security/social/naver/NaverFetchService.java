@@ -1,17 +1,18 @@
-package com.jaeyeonling.boilerplate.security.social.kakao;
+package com.jaeyeonling.boilerplate.security.social.naver;
 
 import com.jaeyeonling.boilerplate.properties.SecurityProperties;
 import com.jaeyeonling.boilerplate.security.social.SocialFetchService;
+import com.jaeyeonling.boilerplate.security.social.SocialLoginRequest;
 import com.jaeyeonling.boilerplate.type.AuthProvider;
 import com.jaeyeonling.boilerplate.utils.RestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class KakaoFetchService extends SocialFetchService<KakaoUserInfo> {
+public class NaverFetchService extends SocialFetchService<NaverUserInfo> {
 
     @Autowired
-    public KakaoFetchService(
+    public NaverFetchService(
             final SecurityProperties securityProperties,
             final RestTemplate restTemplate
     ) {
@@ -26,12 +27,26 @@ public class KakaoFetchService extends SocialFetchService<KakaoUserInfo> {
     //
 
     @Override
+    public NaverUserInfo getSocialUserInfo(SocialLoginRequest socialLoginRequest) {
+        final var naverUserInfo = super.getSocialUserInfo(socialLoginRequest);
+
+        naverUserInfo.responseCheck();
+
+        return naverUserInfo;
+    }
+
+
+    //
+    //
+    //
+
+    @Override
     protected AuthProvider getAuthProvider() {
-        return AuthProvider.KAKAO;
+        return AuthProvider.NAVER;
     }
 
     @Override
-    protected Class<KakaoUserInfo> getSocialUserInfoType() {
-        return KakaoUserInfo.class;
+    protected Class<NaverUserInfo> getSocialUserInfoType() {
+        return NaverUserInfo.class;
     }
 }

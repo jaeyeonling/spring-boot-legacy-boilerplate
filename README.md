@@ -136,6 +136,8 @@ docker-compose -f docker-compose.yml up
 
 * [x] Github
 
+* [x] Naver
+
 
 ## 참고 내용
 

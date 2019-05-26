@@ -10,6 +10,7 @@ public class VerifierProvider {
     private final ServerVerifier serverVerifier;
     private final KakaoVerifier kakaoVerifier;
     private final GithubVerifier githubVerifier;
+    private final NaverVerifier naverVerifier;
 
     //
     //
@@ -19,11 +20,13 @@ public class VerifierProvider {
     public VerifierProvider(
             final ServerVerifier serverVerifier,
             final KakaoVerifier kakaoVerifier,
-            final GithubVerifier githubVerifier
+            final GithubVerifier githubVerifier,
+            final NaverVerifier naverVerifier
     ) {
         this.serverVerifier = serverVerifier;
         this.kakaoVerifier = kakaoVerifier;
         this.githubVerifier = githubVerifier;
+        this.naverVerifier = naverVerifier;
     }
 
     //
@@ -38,6 +41,8 @@ public class VerifierProvider {
                 return kakaoVerifier;
             case GITHUB:
                 return githubVerifier;
+            case NAVER:
+                return naverVerifier;
         }
 
         throw new IllegalArgumentException("Not support auth provider");

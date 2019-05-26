@@ -27,6 +27,7 @@ jaeyeonling.boilerplate:
     authProviderEndPoints:
       kakao: https://kapi.kakao.com/v2/user/me
       github: https://api.github.com/user
+      naver: https://openapi.naver.com/v1/nid/me
   jwt:
     secretKey: SeCrEtKeY
     refreshTerm: 30s
