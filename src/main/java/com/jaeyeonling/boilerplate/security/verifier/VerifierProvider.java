@@ -9,6 +9,7 @@ public class VerifierProvider {
 
     private final ServerVerifier serverVerifier;
     private final KakaoVerifier kakaoVerifier;
+    private final GithubVerifier githubVerifier;
 
     //
     //
@@ -17,10 +18,12 @@ public class VerifierProvider {
     @Autowired
     public VerifierProvider(
             final ServerVerifier serverVerifier,
-            final KakaoVerifier kakaoVerifier
+            final KakaoVerifier kakaoVerifier,
+            final GithubVerifier githubVerifier
     ) {
         this.serverVerifier = serverVerifier;
         this.kakaoVerifier = kakaoVerifier;
+        this.githubVerifier = githubVerifier;
     }
 
     //
@@ -33,6 +36,8 @@ public class VerifierProvider {
                 return serverVerifier;
             case KAKAO:
                 return kakaoVerifier;
+            case GITHUB:
+                return githubVerifier;
         }
 
         throw new IllegalArgumentException("Not support auth provider");
