@@ -6,7 +6,7 @@ import lombok.Setter;
 import org.springframework.lang.Nullable;
 
 @Setter
-public class GithubUserInfo implements SocialUserInfo {
+public class GithubUserInfo extends SocialUserInfo {
 
     private long id;
 

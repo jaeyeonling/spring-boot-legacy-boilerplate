@@ -6,7 +6,7 @@ import lombok.Setter;
 import org.springframework.lang.Nullable;
 
 @Setter
-public class NaverUserInfo implements SocialUserInfo {
+public class NaverUserInfo extends SocialUserInfo {
 
     private NaverResponseCode resultCode;
 

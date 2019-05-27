@@ -45,9 +45,7 @@ public class SocialLoginAuthenticationProvider implements AuthenticationProvider
                 socialUserInfo.getUserId(),
                 authProvider
         ).orElseGet(
-                () -> authenticationRepository.save(
-                        com.jaeyeonling.boilerplate.entity.Authentication.of(socialUserInfo)
-                )
+                () -> authenticationRepository.save(socialUserInfo.toAuthentication())
         );
 
         socialLoginAuthenticationToken.setDetails(new SecurityUser(authentication));

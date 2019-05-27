@@ -7,7 +7,7 @@ import lombok.Setter;
 import org.springframework.lang.Nullable;
 
 @Setter
-public class KakaoUserInfo implements SocialUserInfo {
+public class KakaoUserInfo extends SocialUserInfo {
 
     private long id;
 
