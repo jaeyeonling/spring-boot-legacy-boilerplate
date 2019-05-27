@@ -31,15 +31,15 @@ public class SecurityUser extends User {
     //
     //
 
-    public long getOwner() {
-        return authentication.getOwner();
+    long getUserObjectId() {
+        return authentication.getUserObjectId();
     }
 
-    public String getOwnerString() {
-        return Long.toString(getOwner());
+    String getUserObjectIdString() {
+        return Long.toString(getUserObjectId());
     }
 
-    public String getRole() {
+    String getRole() {
         return authentication.getRole().toString();
     }
 

@@ -134,12 +134,12 @@ public class JwtManager {
                 .withExpiresAt(getExpiresAt())
 
                 // Note: Put claim set here
-                .withClaim("user_id", user.getOwner())
+                .withClaim("user_id", user.getUserObjectId())
                 .withClaim("role", user.getRole())
                 .withClaim("username", user.getUsername())
 
                 .withJWTId(jti)
-                .withKeyId(user.getOwnerString())
+                .withKeyId(user.getUserObjectIdString())
                 .sign(algorithm);
     }
 

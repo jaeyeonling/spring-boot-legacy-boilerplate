@@ -53,7 +53,7 @@ public class Authentication extends AutoPrimaryEntity {
         return account.getRole();
     }
 
-    public long getOwner() {
+    public long getUserObjectId() {
         return account.getId();
     }
 
